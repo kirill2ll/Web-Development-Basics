@@ -25,7 +25,7 @@ class Article
             $this->content = $data['content'];
         }
     }
-    
+
     public static function getById( $id ) {
         $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
         $sql = "SELECT *, UNIX_TIMESTAMP(publicationDate) AS publicationDate FROM articles WHERE id = :id";
@@ -34,7 +34,9 @@ class Article
         $st->execute();
         $row = $st->fetch();
         $conn = null;
-        if ( $row ) return new Article( $row );
+        if ( $row ) {
+            return new Article( $row );
+        }
     }
 
     public function insert() {
@@ -52,6 +54,18 @@ class Article
         $this->id = $conn->lastInsertId();
         $conn = null;
     }
+
+
+    public function delete() {
+    if ( is_null( $this->id ) ) {
+        trigger_error ( "Article::delete(): Attempt to delete an Article object that does not have its ID property set.", E_USER_ERROR );
+    }
+    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+    $st = $conn->prepare ( "DELETE FROM articles WHERE id = :id LIMIT 1" );
+    $st->bindValue( ":id", $this->id, PDO::PARAM_INT );
+    $st->execute();
+    $conn = null;
+  }
 
 }
 
