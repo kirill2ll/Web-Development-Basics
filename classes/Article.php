@@ -25,7 +25,35 @@ class Article
             $this->content = $data['content'];
         }
     }
+    
+    public static function getById( $id ) {
+        $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+        $sql = "SELECT *, UNIX_TIMESTAMP(publicationDate) AS publicationDate FROM articles WHERE id = :id";
+        $st = $conn->prepare( $sql );
+        $st->bindValue( ":id", $id, PDO::PARAM_INT );
+        $st->execute();
+        $row = $st->fetch();
+        $conn = null;
+        if ( $row ) return new Article( $row );
+    }
+
+    public function insert() {
+        if ( !is_null( $this->id ) ){
+            trigger_error ( "Article::insert(): Attempt to insert an Article object that already has its ID property set (to $this->id).", E_USER_ERROR );
+        }
+        $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+        $sql = "INSERT INTO articles ( publicationDate, title, summary, content ) VALUES ( FROM_UNIXTIME(:publicationDate), :title, :summary, :content )";
+        $st = $conn->prepare ( $sql );
+        $st->bindValue( ":publicationDate", $this->publicationDate, PDO::PARAM_INT );
+        $st->bindValue( ":title", $this->title, PDO::PARAM_STR );
+        $st->bindValue( ":summary", $this->summary, PDO::PARAM_STR );
+        $st->bindValue( ":content", $this->content, PDO::PARAM_STR );
+        $st->execute();
+        $this->id = $conn->lastInsertId();
+        $conn = null;
+    }
 
 }
 
 ?>
+
