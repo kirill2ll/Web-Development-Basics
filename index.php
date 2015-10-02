@@ -28,7 +28,6 @@ function viewArticle()
         homepage();
         return;
     }
-
     $results = array();
     $results['article'] = Article::getById( (int)$_GET["articleId"] );
     $results['pageTitle'] = $results['article']->title . " | Widget News";
