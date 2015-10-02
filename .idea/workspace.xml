@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="520e6453-7fee-4fc7-9153-83faf8ed2fa7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/viewArticle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Article.php" afterPath="$PROJECT_DIR$/classes/Article.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/editArticle.php" afterPath="$PROJECT_DIR$/templates/admin/editArticle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/listArticles.php" afterPath="$PROJECT_DIR$/templates/admin/listArticles.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/admin/loginForm.php" afterPath="$PROJECT_DIR$/templates/admin/loginForm.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/Category.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Web-Development-Basics.iws" />
@@ -87,17 +83,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Article.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Article.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/Article.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7869081" vertical-offset="1526" max-vertical-offset="2244">
-              <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+            <state vertical-scroll-proportion="-49.03846" vertical-offset="0" max-vertical-offset="2244">
+              <caret line="75" column="33" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
               <folding>
                 <marker date="1443790389470" expanded="true" signature="962:1051" placeholder="SELECT *, UN..articles..." />
                 <marker date="1443790389470" expanded="true" signature="1599:1735" placeholder="INSERT INTO ..." />
                 <marker date="1443790389470" expanded="true" signature="2462:2505" placeholder="DELETE FROM ..." />
                 <marker date="1443790389470" expanded="true" signature="2914:3046" placeholder="UPDATE artic..." />
                 <marker date="1443790389470" expanded="true" signature="3649:3812" placeholder="SELECT SQL_C..articles..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Category.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classes/Category.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7339833" vertical-offset="0" max-vertical-offset="1819">
+              <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+              <folding>
+                <marker date="1443793872454" expanded="true" signature="798:837" placeholder="SELECT * FRO..categories..." />
+                <marker date="1443793872454" expanded="true" signature="1216:1332" placeholder="SELECT SQL_C..categories..." />
+                <marker date="1443793872454" expanded="true" signature="2143:2218" placeholder="INSERT INTO ..." />
+                <marker date="1443793872454" expanded="true" signature="2799:2872" placeholder="UPDATE categ..." />
+                <marker date="1443793872454" expanded="true" signature="3485:3530" placeholder="DELETE FROM ..." />
               </folding>
             </state>
           </provider>
@@ -161,6 +173,7 @@
         <option value="$PROJECT_DIR$/templates/admin/editArticle.php" />
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/classes/Article.php" />
+        <option value="$PROJECT_DIR$/classes/Category.php" />
       </list>
     </option>
   </component>
@@ -547,14 +560,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/Article.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7869081" vertical-offset="1526" max-vertical-offset="2244">
-          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        <state vertical-scroll-proportion="-49.03846" vertical-offset="0" max-vertical-offset="2244">
+          <caret line="75" column="33" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
           <folding>
             <marker date="1443790389470" expanded="true" signature="962:1051" placeholder="SELECT *, UN..articles..." />
             <marker date="1443790389470" expanded="true" signature="1599:1735" placeholder="INSERT INTO ..." />
             <marker date="1443790389470" expanded="true" signature="2462:2505" placeholder="DELETE FROM ..." />
             <marker date="1443790389470" expanded="true" signature="2914:3046" placeholder="UPDATE artic..." />
             <marker date="1443790389470" expanded="true" signature="3649:3812" placeholder="SELECT SQL_C..articles..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7339833" vertical-offset="0" max-vertical-offset="1819">
+          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+          <folding>
+            <marker date="1443793872454" expanded="true" signature="798:837" placeholder="SELECT * FRO..categories..." />
+            <marker date="1443793872454" expanded="true" signature="1216:1332" placeholder="SELECT SQL_C..categories..." />
+            <marker date="1443793872454" expanded="true" signature="2143:2218" placeholder="INSERT INTO ..." />
+            <marker date="1443793872454" expanded="true" signature="2799:2872" placeholder="UPDATE categ..." />
+            <marker date="1443793872454" expanded="true" signature="3485:3530" placeholder="DELETE FROM ..." />
           </folding>
         </state>
       </provider>
