@@ -25,6 +25,18 @@ switch ( $action ) {
     case 'deleteArticle':
         deleteArticle();
         break;
+    case 'listCategories':
+        listCategories();
+        break;
+    case 'newCategory':
+        newCategory();
+        break;
+    case 'editCategory':
+        editCategory();
+        break;
+    case 'deleteCategory':
+        deleteCategory();
+        break;
     default:
         listArticles();
 }
@@ -70,6 +82,8 @@ function newArticle() {
         header( "Location: admin.php" );
     } else {
         $results['article'] = new Article;
+        $data=Category::getList();
+        $results['categories']=$data['results'];
         require( TEMPLATE_PATH . "/admin/editArticle.php" );
     }
 }
@@ -92,6 +106,8 @@ function editArticle() {
         header( "Location: admin.php" );
     } else {
         $results['article'] = Article::getById( (int)$_GET['articleId'] );
+        $data = Category::getList();
+        $results['categories'] = $data['results'];
         require( TEMPLATE_PATH . "/admin/editArticle.php" );
     }
 
@@ -113,6 +129,11 @@ function listArticles() {
     $data = Article::getList();
     $results['articles'] = $data['results'];
     $results['totalRows'] = $data['totalRows'];
+    $data = Category::getList();
+  $results['categories'] = array();
+  foreach ( $data['results'] as $category ) {
+      $results['categories'][$category->id] = $category;
+  }
     $results['pageTitle'] = "All Articles";
 
     if ( isset( $_GET['error'] ) ) {
