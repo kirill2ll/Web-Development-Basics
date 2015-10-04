@@ -23,7 +23,9 @@ function archive() {
   $results['totalRows'] = $data['totalRows'];
   $data = Category::getList();
   $results['categories'] = array();
-  foreach ( $data['results'] as $category ) $results['categories'][$category->id] = $category;
+  foreach ( $data['results'] as $category ) {
+      $results['categories'][$category->id] = $category;
+  }
   $results['pageHeading'] = $results['category'] ?  $results['category']->name : "Article Archive";
   $results['pageTitle'] = $results['pageHeading'];
   require( TEMPLATE_PATH . "/archive.php" );
@@ -49,7 +51,9 @@ function homepage() {
   $results['totalRows'] = $data['totalRows'];
   $data = Category::getList();
   $results['categories'] = array();
-  foreach ( $data['results'] as $category ) $results['categories'][$category->id] = $category; 
+  foreach ( $data['results'] as $category ) {
+      $results['categories'][$category->id] = $category;
+  }
   $results['pageTitle'] = "Widget News";
   require( TEMPLATE_PATH . "/homepage.php" );
 }

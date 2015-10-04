@@ -29,18 +29,6 @@ class Article
     }
   }
 
-  public function storeFormValues ( $params ) {
-      $this->__construct( $params );
-      if ( isset($params['publicationDate']) ) {
-      $publicationDate = explode ( '-', $params['publicationDate'] );
-
-      if ( count($publicationDate) == 3 ) {
-        list ( $y, $m, $d ) = $publicationDate;
-        $this->publicationDate = mktime ( 0, 0, 0, $m, $d, $y );
-      }
-    }
-  }
-
   public static function getById( $id ) {
     $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
     $sql = "SELECT *, UNIX_TIMESTAMP(publicationDate) AS publicationDate FROM articles WHERE id = :id";
@@ -124,6 +112,20 @@ class Article
     $st->execute();
     $conn = null;
   }
+
+
+    public function storeFormValues ( $params ) {
+        $this->__construct( $params );
+        if ( isset($params['publicationDate']) ) {
+            $publicationDate = explode ( '-', $params['publicationDate'] );
+
+            if ( count($publicationDate) == 3 ) {
+                list ( $y, $m, $d ) = $publicationDate;
+                $this->publicationDate = mktime ( 0, 0, 0, $m, $d, $y );
+            }
+        }
+    }
+
 
 }
 
