@@ -19,12 +19,12 @@
 
           <li>
             <label for="summary">Article Summary</label>
-            <textarea name="summary" id="summary" placeholder="Brief description of the article" required maxlength="1000" style="height: 5em;"><?php echo htmlspecialchars( $results['article']->summary )?></textarea>
+            <textarea name="summary" id="summary" placeholder="Brief description of the article" required maxlength="1000""><?php echo htmlspecialchars( $results['article']->summary )?></textarea>
           </li>
 
           <li>
             <label for="content">Article Content</label>
-            <textarea name="content" id="content" placeholder="The HTML content of the article" required maxlength="100000" style="height: 30em;"><?php echo htmlspecialchars( $results['article']->content )?></textarea>
+            <textarea name="content" id="content" placeholder="The HTML content of the article" required maxlength="100000"><?php echo htmlspecialchars( $results['article']->content )?></textarea>
           </li>
 
           <li>
